@@ -21,8 +21,13 @@ export class DataFormComponent implements OnInit {
       email: new FormControl(null),
     })*/
     this.formulario = this.formBuilder.group({
-      nome: [null],
-      email: [null],
+        nome: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
+        idade: [null, Validators.min(18)]
     });
+  }
+
+  onSubmit() {
+    console.log(this.formulario.value);
   }
 }

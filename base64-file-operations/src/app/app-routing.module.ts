@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Base64FileComponent } from './base64-file/base64-file.component';
-import { FileBase64Component } from './file-base64/file-base64.component';
+import { FileBase64Component } from './image-base64/file-base64.component';
+import { Base64ImageComponent } from './base64-image/base64-image.component';
 
 const routes: Routes = [
-  {path: 'basefile', component: Base64FileComponent},
-  {path: 'filebase', component: FileBase64Component}
+  {path: 'filebase', component: FileBase64Component},
+  {path: 'baseimage', component: Base64ImageComponent}
 ];
 
 @NgModule({

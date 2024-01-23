@@ -9,9 +9,19 @@
 <div *ngIf="mostrarCursos">Lista de Cursos: {{ cursos }}</div>
 <div *ngIf="!mostrarCursos">Não existem cursos para serem listados.</div>
 
-<br>
+<br />
 <button (click)="onMostrarCursos()">Mostrar ou escoder cursos</button>
 
 <h3>Hidden como alternativa</h3>
 <div [hidden]="!mostrarCursos">Lista de Cursos: {{ cursos }}</div>
 <div [hidden]="mostrarCursos">Não existem cursos para serem listados.</div>
+
+<h3>Removendo o * e usando template</h3>
+
+<div *ngIf="mostrarCursos"></div>
+
+<ng-template [ngIf]="mostrarCursos">
+  <div>Lista de Cursos:</div>
+</ng-template>
+
+<div template="ngIf mostrarCursos">Lista de cursos aqui:</div>

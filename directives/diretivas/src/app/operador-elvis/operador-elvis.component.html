@@ -1,0 +1,5 @@
+<p>Descrição: {{ tarefa.des }}</p>
+<!--<p>Responsável: {{ tarefa.responsavel.nome }}</p> >> Cannot read property "name"of null-->
+<!--<p>Responsável: {{ tarefa.responsavel != null? tarefa.responsavel.nome : ''}}</p>-->
+<!--Outra forma > com Elvis -->
+<p>Responsável: {{ tarefa.responsavel?.nome }}</p>

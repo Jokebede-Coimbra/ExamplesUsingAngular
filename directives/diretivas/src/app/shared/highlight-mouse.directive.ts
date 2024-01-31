@@ -17,6 +17,7 @@ export class HighlightMouseDirective {
       'orange'
     );*/
     this.backgroundColor = 'orange';
+    console.log('Mouse sobre o componente!');
   }
   @HostListener('mouseleave') onMouseLeave() {
     /*this._rederer2.setStyle(
@@ -34,6 +35,7 @@ export class HighlightMouseDirective {
     // codigo extra;
     return this.backgroundColor;
   }
+
 
   constructor() //private _elementRef: ElementRef, private _rederer2: Renderer2
   {}

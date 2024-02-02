@@ -5,3 +5,11 @@
 <p highlightMouse>Texto com highlight quando passo o mouse.</p>
 
 <p [highlight]="'blue'" [defaultColor]="'pink'">Texto com highlight com cores customizadas.</p>
+
+<h5>Diretiva Estrutura customizada - ngElse</h5>
+
+<div *ngIf="mostrarCursos">Lista de Cursos:</div>
+<div *ngElse="mostrarCursos">Não existem cursos para serem listados.</div>
+<br />
+<button (click)="onMostrarCursos()">Mostrar ou escoder cursos</button>
+

@@ -10,9 +10,11 @@ import { CursosService } from './cursos/curso.service';
 import { CriarCursoModule } from './criar-curso/criar-curso.module';
 import { CursosModule } from './cursos/cursos.module';
 
+
 @NgModule({
   declarations: [
     AppComponent
+
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,8 @@ export class DataBindingComponent {
   nome: string = 'Coimbra';
   cursoAngular: boolean = true;
 
+  nomeDoCurso: string = "Angular";
+  
   getValor() {
     return 1;
   }

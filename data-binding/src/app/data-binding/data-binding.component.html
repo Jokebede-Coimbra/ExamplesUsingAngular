@@ -1,16 +1,19 @@
 <section class="property-binding">
-
   <article>
     <h2>Interpolation / Interpolação</h2>
     <p>String renderizada com interpolação: {{ nome }}</p>
-    <p>Resultado de 1 + 1 é: {{ 1 + 1 }} </p>
-    <p>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor()}} </p>
-    <p>Curso Angular: {{ cursoAngular && getCurtirCurso() }} </p>
+    <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>
+    <p>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor() }}</p>
+    <p>Curso Angular: {{ cursoAngular && getCurtirCurso() }}</p>
   </article>
 
   <article>
     <h2>Property Binding</h2>
-    <img src="{{ urlImagem }}">
-    <img [src]="urlImagem">
+    <img src="{{ urlImagem }}" />
+    <img [src]="urlImagem" />
   </article>
 </section>
+<article>
+  <h3>Input/Output Properties</h3>
+  <app-input-property [nome]="nomeDoCurso"></app-input-property>
+</article>

@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InputPropertyComponent } from './input-property/input-property.component';
+import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InputPropertyComponent
+    ExemplosPipesComponent
   ],
   imports: [
     BrowserModule,

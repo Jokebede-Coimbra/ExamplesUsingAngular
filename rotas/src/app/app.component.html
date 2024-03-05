@@ -24,7 +24,7 @@
     <li class="nav-item" role="presentation">
       <a
         routerLink="/cursos"
-        [queryParams]="{pagina:1}"
+        [queryParams]="{ pagina: 1 }"
         class="nav-link rounded-5"
         id="profile-tab2"
         data-bs-toggle="tab"
@@ -58,10 +58,22 @@
         Rotas
       </a>
     </li>
+    <li class="nav-item" role="presentation">
+      <a
+        routerLink="/alunos"
+        class="nav-link rounded-5"
+        id="contact-tab2"
+        data-bs-toggle="tab"
+        role="tab"
+        aria-selected="false"
+      >
+        Alunos
+      </a>
+    </li>
   </ul>
 </nav>
 <div class="container">
   <p>Entre com o id do curso</p>
-  <input [(ngModel)]="idCourseValue" type="text" class="form-control">
+  <input [(ngModel)]="idCourseValue" type="text" class="form-control" />
   <router-outlet></router-outlet>
 </div>

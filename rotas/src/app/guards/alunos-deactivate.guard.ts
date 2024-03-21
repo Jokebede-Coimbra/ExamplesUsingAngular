@@ -6,13 +6,14 @@ import {
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
 } from '@angular/router';
+import { IFormCanDeactivate } from './iform-candeactivate';
 
 @Injectable()
 export class AlunosDeactivateGuard
-  implements CanDeactivate<AlunoFormComponent>
+  implements CanDeactivate<IFormCanDeactivate>
 {
   canDeactivate(
-    component: AlunoFormComponent,
+    component: IFormCanDeactivate,
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {

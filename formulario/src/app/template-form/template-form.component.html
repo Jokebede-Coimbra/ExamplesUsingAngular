@@ -1,14 +1,15 @@
-<form>
+<form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">
   <div class="form-group">
     <label for="nome" class="form-label">Nome</label>
-    <input type="text" class="form-control" id="nome" aria-describedby="nome" />
+    <input type="text" class="form-control" id="nome" name="nome" ngModel />
     <label for="email" class="form-label">Email address</label>
     <input
       type="email"
       class="form-control"
       placeholder="nome@email.com"
       id="email"
-      aria-describedby="email"
+      name="email"
+      ngModel
     />
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>

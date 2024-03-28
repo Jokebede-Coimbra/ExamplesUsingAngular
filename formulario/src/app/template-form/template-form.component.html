@@ -1,7 +1,7 @@
 <form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">
   <div class="form-group">
     <label for="nome" class="form-label">Nome</label>
-    <input type="text" class="form-control" id="nome" name="nome" ngModel />
+    <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="usuario.nome" />
     <label for="email" class="form-label">Email address</label>
     <input
       type="email"
@@ -9,8 +9,9 @@
       placeholder="nome@email.com"
       id="email"
       name="email"
-      ngModel
+      [(ngModel)]="usuario.email"
     />
   </div>
+
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

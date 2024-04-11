@@ -66,6 +66,7 @@
           ngModel
           required
           #cep="ngModel"
+          (blur)="consultaCEP(cep.value, formulario)"
         />
 
         <app-campo-control-erro

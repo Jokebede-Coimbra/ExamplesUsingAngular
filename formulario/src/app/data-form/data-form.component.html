@@ -1,1 +1,114 @@
-<p>data-form works!</p>
+<form class="form-horizontal" [formGroup]="formulario">
+  <div class="form-group">
+    <div class="col-sm-12">
+      <label for="nome" class="control-label">Nome</label>
+    </div>
+
+    <div class="col-sm-12">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="nome"
+        id="nome"
+        placeholder="Nome"
+        required
+      />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-12">
+      <label for="email" class="control-label">Email</label>
+    </div>
+    <div class="col-sm-12">
+      <input
+        type="email"
+        class="form-control"
+        formControlName="email"
+        id="email"
+        placeholder="nome@email.com"
+        required
+        email
+      />
+    </div>
+  </div>
+  <!--
+  <div>
+    <div class="form-group">
+      <div class="col-md-3">
+        <label for="cep" class="control-label">CEP</label>
+        <input type="text" class="form-control" id="cep" formControlName="cep" required />
+      </div>
+
+      <div class="col-md-3">
+        <label for="numero" class="control-label">Número</label>
+        <input
+          type="text"
+          class="form-control"
+          id="numero"
+          formControlName="numero"
+          required
+        />
+      </div>
+
+      <div class="col-md-6">
+        <label for="complemento" class="control-label">Complemento</label>
+        <input
+          type="text"
+          class="form-control"
+          id="complemento"
+          formControlName="complemento"
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-12">
+        <label for="rua" class="control-label">Rua</label>
+      </div>
+
+      <div class="col-sm-12">
+        <input type="text" class="form-control" formControlName="rua" id="rua" required />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-5">
+        <label for="bairro" class="control-label">Bairro</label>
+        <input
+          type="text"
+          class="form-control"
+          id="bairro"
+          formControlName="bairro"
+          required
+        />
+      </div>
+
+      <div class="col-md-4">
+        <label for="cidade" class="control-label">Cidade</label>
+        <input
+          type="text"
+          class="form-control"
+          id="cidade"
+          formControlName="cidade"
+          required
+        />
+      </div>
+
+      <div class="col-md-3">
+        <label for="estado" class="control-label">Estado</label>
+        <input
+          type="text"
+          class="form-control"
+          id="estado"
+          formControlName="estado"
+          required
+        />
+      </div>
+    </div>
+  </div>
+-->
+  <br />
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <app-form-debug [form]="formulario"></app-form-debug>
+</form>

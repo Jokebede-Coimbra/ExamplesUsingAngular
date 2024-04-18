@@ -40,12 +40,22 @@
       </app-campo-control-erro>
     </div>
   </div>
-  <!--
+
   <div>
     <div class="form-group">
       <div class="col-md-3">
         <label for="cep" class="control-label">CEP</label>
-        <input type="text" class="form-control" id="cep" formControlName= />
+        <input
+          type="text"
+          class="form-control"
+          id="cep"
+          formControlName="cep"
+        />
+        <app-campo-control-erro
+          [mostrarErro]="verificaValidTouched('cep')"
+          msgErro="Email é obrigatório."
+        >
+        </app-campo-control-erro>
       </div>
 
       <div class="col-md-3">
@@ -55,8 +65,12 @@
           class="form-control"
           id="numero"
           formControlName="numero"
-
         />
+        <app-campo-control-erro
+          [mostrarErro]="verificaValidTouched('numero')"
+          msgErro="Email é obrigatório."
+        >
+        </app-campo-control-erro>
       </div>
 
       <div class="col-md-6">
@@ -77,6 +91,11 @@
 
       <div class="col-sm-12">
         <input type="text" class="form-control" formControlName="rua" id= />
+        <app-campo-control-erro
+          [mostrarErro]="verificaValidTouched('rua')"
+          msgErro="Email é obrigatório."
+        >
+        </app-campo-control-erro>
       </div>
     </div>
 
@@ -88,8 +107,12 @@
           class="form-control"
           id="bairro"
           formControlName="bairro"
-
         />
+        <app-campo-control-erro
+          [mostrarErro]="verificaValidTouched('bairro')"
+          msgErro="Email é obrigatório."
+        >
+        </app-campo-control-erro>
       </div>
 
       <div class="col-md-4">
@@ -99,8 +122,12 @@
           class="form-control"
           id="cidade"
           formControlName="cidade"
-
         />
+        <app-campo-control-erro
+          [mostrarErro]="verificaValidTouched('cidade')"
+          msgErro="Email é obrigatório."
+        >
+        </app-campo-control-erro>
       </div>
 
       <div class="col-md-3">
@@ -110,12 +137,16 @@
           class="form-control"
           id="estado"
           formControlName="estado"
-
         />
+        <app-campo-control-erro
+          [mostrarErro]="verificaValidTouched('estado')"
+          msgErro="Email é obrigatório."
+        >
+        </app-campo-control-erro>
       </div>
     </div>
   </div>
--->
+
   <br />
   <button type="submit" class="btn btn-primary">Submit</button>
   <app-form-debug [form]="formulario"></app-form-debug>

@@ -21,7 +21,7 @@ export class DataFormComponent implements OnInit {
     this.formulario = this.formBuilder.group({
       nome: [null, Validators.required],
       email: [null, [Validators.required, Validators.email]],
-      
+
       endereco: this.formBuilder.group({
         cep: [null, Validators.required],
         numero: [null, Validators.required],
@@ -62,5 +62,36 @@ export class DataFormComponent implements OnInit {
       'has-error': this.verificaValidTouched(campo),
       'has-feedback': this.verificaValidTouched(campo),
     };
+  }
+
+  /* consultaCEP() {
+    const cep = this.formulario.get('endereco.cep')?.value;
+
+    if (cep != null && cep !== '') {
+      this.cepService.consultaCEP(cep)
+      .subscribe((dados: any)  => this.populaDadosForm(dados));
+    }
+  }*/
+  consultaCEP(cep: string, formulario: any) {
+    // Nova variável "cep" somente com dígitos.
+    cep = cep.replace(/\D/g, '');
+  }
+  populaDadosForm(dados: any) {
+    // this.formulario.setValue({});
+
+    this.formulario.patchValue({
+      endereco: {
+        rua: dados.logradouro,
+        // cep: dados.cep,
+        complemento: dados.complemento,
+        bairro: dados.bairro,
+        cidade: dados.localidade,
+        estado: dados.uf,
+      },
+    });
+
+    this.formulario.get('nome')?.setValue('Jkbd');
+
+    // console.log(form);
   }
 }

@@ -6,6 +6,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { DropdownService } from '../shared/services/dropdown.service';
+import { EstadoBr } from '../shared/models/estado-br';
 
 @Component({
   selector: 'app-data-form',
@@ -14,10 +16,22 @@ import {
 })
 export class DataFormComponent implements OnInit {
   formulario!: FormGroup;
+  estados: EstadoBr[] = [];
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private dropdownService: DropdownService
+  ) {}
 
   ngOnInit() {
+
+    this.dropdownService.getEstadosBr().subscribe((dados: EstadoBr) => {
+      this.estados.push(dados);
+      console.log(dados);
+    });
+
     this.formulario = this.formBuilder.group({
       nome: [null, Validators.required],
       email: [null, [Validators.required, Validators.email]],

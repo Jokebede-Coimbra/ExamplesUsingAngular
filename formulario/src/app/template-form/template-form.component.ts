@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ConsultaCepService } from '../shared/consulta-cep.service';
 
 @Component({
   selector: 'app-template-form',
@@ -12,7 +13,7 @@ export class TemplateFormComponent implements OnInit {
     email: null,
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private  consultaCepService : ConsultaCepService) {}
 
   onSubmit(form: any) {
     console.log(form);

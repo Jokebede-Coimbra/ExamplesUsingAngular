@@ -1,0 +1,10 @@
+<form [formGroup]="addressForm">
+  <input
+    type="text"
+    formControlName="cep"
+    placeholder="CEP"
+    (blur)="fetchAddress()"
+  />
+  <button type="button" (click)="fetchAddress()">Buscar</button>
+</form>
+<app-address-details [address]="fetchedAddress"></app-address-details>

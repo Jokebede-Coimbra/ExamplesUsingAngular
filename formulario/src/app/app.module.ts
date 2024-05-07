@@ -7,9 +7,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TemplateFormModule } from './template-form/template-form.module';
 import { HttpClient } from '@angular/common/http';
 import { DataFormModule } from './data-form/data-form.module';
+import { AddressFormComponent } from './address-form/address-form.component';
+import { AddressDetailsComponent } from './address-details/address-details.component';
+import { CepService } from './shared/cep.service';
+
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AddressDetailsComponent, AddressFormComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -18,7 +22,7 @@ import { DataFormModule } from './data-form/data-form.module';
     ReactiveFormsModule,
     DataFormModule
   ],
-  providers: [HttpClient],
+  providers: [HttpClient, CepService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

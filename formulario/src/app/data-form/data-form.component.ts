@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { DropdownService } from '../shared/services/dropdown.service';
 import { EstadoBr } from '../shared/models/estado-br';
+import { ConsultaCepService } from '../shared/consulta-cep.service';
 
 @Component({
   selector: 'app-data-form',
@@ -18,15 +19,14 @@ export class DataFormComponent implements OnInit {
   formulario!: FormGroup;
   estados: EstadoBr[] = [];
 
-
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private dropdownService: DropdownService
+    private dropdownService: DropdownService,
+    private consultaCepService: ConsultaCepService
   ) {}
 
   ngOnInit() {
-
     this.dropdownService.getEstadosBr().subscribe((dados: EstadoBr) => {
       this.estados.push(dados);
       console.log(dados);
@@ -78,18 +78,16 @@ export class DataFormComponent implements OnInit {
     };
   }
 
-  /* consultaCEP() {
+  consultaCEP() {
     const cep = this.formulario.get('endereco.cep')?.value;
 
     if (cep != null && cep !== '') {
-      this.cepService.consultaCEP(cep)
-      .subscribe((dados: any)  => this.populaDadosForm(dados));
+      this.consultaCepService
+        .consultaCEP(cep)
+        .subscribe((dados: any) => this.populaDadosForm(dados));
     }
-  }*/
-  consultaCEP(cep: string, formulario: any) {
-    // Nova variável "cep" somente com dígitos.
-    cep = cep.replace(/\D/g, '');
   }
+
   populaDadosForm(dados: any) {
     // this.formulario.setValue({});
 
